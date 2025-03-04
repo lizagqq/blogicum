@@ -29,6 +29,7 @@ posts = [
 ]
 
 def index(request):
+    print("DEBUG: posts =", posts)  
     return render(request, 'blog/index.html', {'posts': posts})
 
 def post_detail(request, post_id):
