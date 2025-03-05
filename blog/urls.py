@@ -1,8 +1,13 @@
 from django.urls import path
 from django.shortcuts import render 
 from .views import index, post_detail, category_view
+from django.conf import settings
+from django.conf.urls.static import static
+
+
 
 app_name = "blog"
+
 
 urlpatterns = [
     path('', index, name='index'),  
@@ -15,3 +20,7 @@ urlpatterns = [
 
         path('detail/', lambda request: render(request, 'blog/detail.html'), name='detail'),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
