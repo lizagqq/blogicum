@@ -40,3 +40,9 @@ def post_detail(request, post_id):
 
 def category_view(request, category_slug):
     return render(request, 'blog/category.html', {'category': category_slug})
+
+def about(request):
+    return render(request, 'blog/about.html')
+
+def rules(request):
+    return render(request, 'blog/rules.html')
